@@ -1,24 +1,36 @@
 import React from "react";
 
-import katie from "../img/katie.png";
-import star from "../img/star.png";
+export default function Card(props) {
 
-export default function Card() {
+    // const colors = ["Red", "Orange", "Yellow", "Green", "Blue"]
+
+    // const element = colors.map(col => {return `<h3>${col}</h3>`})
+    
+    let badgeText;
+    if (props.data.openSpots === 0) {
+        badgeText = "sold out";
+    } else if(props.data.location === "Online") {
+        badgeText = "online";
+    } else {
+        badgeText = "";
+    }
+
     return (
         <div className="card">
-            <p className="status"> sold out </p>
-            <img src={katie} alt="Katie Zaferes" className="card--image" />
+            {/* {element} */}
+            {badgeText && <div className="status"><p> {badgeText} </p></div>}
+            {/* <div className="status"><p> {badgeText} </p></div> */}
+            <img src={`img/${props.data.coverImg}`} alt={props.data.description} className="card--image" />
             <div className="card--status">
-                <img src={star} alt="star rating" />
-                <span> 5.0 </span>
-                <span className="gray"> (6) &#183;</span>
-                <span className="gray"> USA </span>
+                <img src="./img/star.png" alt="star rating" />
+                <span> {props.data.stats.rating} </span>
+                <span className="gray"> ({props.data.stats.reviewCount}) &#183;</span> <span className="gray"> {props.country} </span>
             </div>
             <p className="topic">
-                Life Lessons with Katie Zaferes
+                {props.data.title}
             </p>
             <p className="pricing">
-                <span className="price-bold"> From $136 </span> / person
+                <span className="price-bold"> From ${props.data.price} </span> / person
             </p>
         </div>
 
