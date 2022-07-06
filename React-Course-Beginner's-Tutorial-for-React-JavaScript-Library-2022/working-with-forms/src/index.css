@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', sans-serif;
+}
+
+form {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+input, textarea, select, button {
+    margin-top: 5px;
+    padding: 5px 0px;
+    font-size: 11px;
+}
+
+input, textarea {
+    border: 0;
+    border-bottom: 1px solid #2e2e2e;
+}
+textarea {
+    padding: 5px 10px;
+    border: 1px solid #2e2e2e;
+    border-radius: 5px;
+}
+
+fieldset {
+    margin-top: 20px;
+    border: 0;
+}
+
+fieldset > input {
+    margin-right: 5px;
+}
+
+.emp > label {
+    font-weight: 400;
+    margin-right: 25px;
+    font-size: 12px;
+}
+
+legend {
+    /* margin-bottom: ; */
+    font-size: 16px;
+    font-weight: 600;
+}
+
+button {
+    padding: 10px;
+    margin-top: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 5px;
+    border: 1px solid #2e2e2e;
+}
